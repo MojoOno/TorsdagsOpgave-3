@@ -1,27 +1,46 @@
-int[][] board = new int[8][8];
-int sideLength = 80;
+ArrayList<Integer> numbersList = new ArrayList<>();
+ArrayList<String> stringList = new ArrayList<>();
+ArrayList<Boolean> booleanList = new ArrayList<>();
 
-void settings(){
-size(sideLength*8, sideLength*8);
-}
 
 void setup() {
-  for (int i = 0; i < 8; i++) {
-    for (int j = 0; j < 8; j++) {
-      board[i][j] = (i + j)%2;
-    }
-  }
+  numbersList.add(5);
+  numbersList.add(10);
+  numbersList.add(15);
+
+  int sum= intSum(numbersList);
+  println("The sum of the numbers is: " + sum);
+  int avg = intAvg(numbersList);
+  println("The average of the numbers is: " + avg);
+
+  stringList.add("Falcho");
+  stringList.add("Franck");
+  stringList.add("André");
+
+  printList(stringList);
+
+  booleanList.add(true);
+  booleanList.add(false);
+  booleanList.add(true);
 }
 
-void draw() {
-  for (int i = 0; i < 8; i++) {
-    for (int j = 0; j < 8; j++) {
-      if (board[i][j] == 0) {
-        fill(0);
-      } else {
-        fill(255);
-      }
-      rect(i * sideLength, j * sideLength, sideLength, sideLength);
-    }
+void printList(ArrayList<String> stringList) {
+  println(stringList);
+}
+
+int intSum(ArrayList<Integer> intList) {
+  int sum = 0;
+  for (int i = 0; i < numbersList.size(); i++) {
+    sum += intList.get(i);
   }
+  return sum;
+}
+
+int intAvg(ArrayList<Integer> intList) {
+  int sum = 0;
+  for (int i = 0; i < numbersList.size(); i++) {
+    sum += intList.get(i);
+  }
+    return sum/intList.size();
+  
 }
