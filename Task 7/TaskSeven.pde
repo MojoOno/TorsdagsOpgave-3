@@ -17,6 +17,8 @@ void setup() {
   stringList.add("Franck");
   stringList.add("André");
 
+
+
   printList(stringList);
 
   booleanList.add(true);
@@ -24,8 +26,10 @@ void setup() {
   booleanList.add(true);
 }
 
-void printList(ArrayList<String> stringList) {
-  println(stringList);
+void printList(ArrayList<String> list) {
+  for (int i = 0; i < list.size(); i++) {
+    println(list.get(i));
+  }
 }
 
 int intSum(ArrayList<Integer> intList) {
@@ -41,6 +45,5 @@ int intAvg(ArrayList<Integer> intList) {
   for (int i = 0; i < numbersList.size(); i++) {
     sum += intList.get(i);
   }
-    return sum/intList.size();
-  
+  return sum/intList.size();
 }
